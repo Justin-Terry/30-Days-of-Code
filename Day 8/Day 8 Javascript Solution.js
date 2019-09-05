@@ -3,22 +3,18 @@ function processData(input) {
     var phoneBook = new Map();
     var items = input.split("\n")
 
-    var n = items[0]
-    for (var i = 1; i <= n ;i++) {
+    for (var i = 1; i <= items[0] ;i++) {
         entry = items[i].split(" ");
         phoneBook.set(entry[0], entry[1])
     }
 
-    for (var j = (n + 1); j < items.size; j++) {
-        var name = items[j];
-        console.log(name);
-        if (phoneBook.has(name)) {
-            console.log(items[j] + "=" + phoneBook.get(name));
+    for (var j = i; j < items.length; j++) {
+        if (phoneBook.has(items[j])) {
+            console.log(items[j] + "=" + phoneBook.get(items[j]));
         } else {
-            console.log("Not found");
+            console.log("Not found")
         }
-    }
-    
+    }    
 } 
 
 process.stdin.resume();
