@@ -1,0 +1,1 @@
+// Javascript does not support interfaces
